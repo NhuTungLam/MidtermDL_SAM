@@ -20,7 +20,7 @@ sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 sam.to(device)
 
-# Generate masks automatically using SAM
+# Generate masks automatically using SAM(zero shot)
 mask_generator = SamAutomaticMaskGenerator(sam)
 masks = mask_generator.generate(image_rgb)
 

@@ -69,7 +69,7 @@ predictor = SamPredictor(sam)
 predictor.set_image(image_rgb)
 input_point = np.array([[945,373],[949,122],[866,650]])  # Điều chỉnh tùy thuộc vào ảnh
 input_label = np.array([1,1,1])#1 foreground 0 background
-masks, _, _ = predictor.predict(point_coords=input_point, point_labels=input_label)
+masks, _, _ = predictor.predict(point_coords=input_point, point_labels=input_label)#dự đoán 1 điểm với 1 shot
 segmented_mask = masks[0]
 # Hiển thị kết quả
 plt.figure(figsize=(10, 5))

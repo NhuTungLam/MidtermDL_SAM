@@ -31,7 +31,7 @@ bounding_boxes = [
 for bbox in bounding_boxes:
     predictor.set_image(image_rgb)
     input_box = np.array([bbox])  # Đảm bảo đúng kích thước (1, 4)
-    masks, _, _ = predictor.predict(box=input_box)
+    masks, _, _ = predictor.predict(box=input_box)#dự đoán 1 bbox với one shot
     segmented_mask_box = masks[0]
     
    # Hiển thị kết quả
